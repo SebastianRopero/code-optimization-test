@@ -1,19 +1,26 @@
 public class Store {
     public static void main(String[] args) {
-        int p1 = 15;
-        int p2 = 10;
-        int p3 = 5;
 
-        int total1 = p1 * 2;
-        int total2 = p2 * 3;
-        int total3 = p3 * 4;
+      final int [] precioDeProductos = {15, 10 ,5 }; //Almacenar el precio de los productos como constantes
 
-        int totalSales = total1 + total2 + total3;
+      final int [] cantidadesVendidas = {2, 3, 4 }; //Almacenar las cantidades que se vendieron de cada producto como constantes
 
-        if (totalSales > 50) {
-            System.out.println("Good sales performance");
+      final int umbralDeVentas = 50; //Se almacena en una constante el umbral de ventas
+      
+      int ventasTotales = 0; //Se define ventas totales como un contador que se va incrementando teniendo en cuenta los precios y las cantidades
+
+    
+        for (int i = 0; i < precioDeProductos.length; i++) {
+            ventasTotales += precioDeProductos[i] * cantidadesVendidas[i];
+        } // Se utiliza un bucle para calcular el numero de ventas totales 
+ 
+        System.err.println(ventasTotales);
+
+
+        if (ventasTotales > umbralDeVentas) {
+            System.out.println("Buen desempeño de ventas");
         } else {
-            System.out.println("Low sales performance");
-        }
+            System.out.println("Bajo rendimiento de ventas");
+        } // Se compara el numero de ventas totales con el umbral de ventas para verificar si hubo un buen desempeño de ventas o no
     }
 }
